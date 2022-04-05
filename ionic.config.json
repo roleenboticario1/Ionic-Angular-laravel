@@ -1,0 +1,7 @@
+{
+  "name": "laravelIonicAngularCrud",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
