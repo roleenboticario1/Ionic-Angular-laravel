@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Products</ion-title>
+    <ion-buttons slot="end">
+       <ion-button routerLink="/add-product">
+         <ion-icon slot="start" name="add"></ion-icon>
+       </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-card *ngFor="let product of products$|async" (click)="openDetailModal(product)">
+      <ion-card-content>
+        <ion-grid fixed>
+          <ion-col size="3">
+            <ion-thumbnail>
+              <img [src]="product.imageUrl">
+            </ion-thumbnail>
+          </ion-col>
+          <ion-col size="9">
+             <ion-card-content>
+                <ion-card-title>{{ product.name }}</ion-card-title>
+                <ion-card-title>${{ product.price }}</ion-card-title>
+             </ion-card-content>
+          </ion-col>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
+</ion-content>
