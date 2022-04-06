@@ -1,9 +1,15 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Add product</ion-title>
+    <ion-title> {{ isEditMode ? 'Update' : 'Add'}} product</ion-title>
     
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" *ngIf="!isEditMode">
       <ion-back-button defaultHref="products"></ion-back-button>
+    </ion-buttons>
+
+     <ion-buttons slot="end" *ngIf="isEditMode">
+      <ion-button (click)="closeModal()">
+         <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
     </ion-buttons>
 
   </ion-toolbar>
@@ -32,7 +38,7 @@
        <ion-textarea formControlName='description'></ion-textarea>
      </ion-item>
      <ion-button expand="block" (click)="SubmitProduct()" [disabled]="form.invalid">
-      Save Product
+       {{ isEditMode ? 'Update' : 'Save'}} Product
      </ion-button>
   </form>
 </ion-content>

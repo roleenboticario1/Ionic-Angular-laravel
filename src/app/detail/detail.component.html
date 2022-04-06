@@ -19,7 +19,7 @@
        <p class="ion-margin-vertical">{{ product.description }}</p>
      </ion-text>
 
-     <ion-button expand="block">Edit</ion-button>
-     <ion-button expand="block" color="danger">Delete</ion-button>
+     <ion-button expand="block" (click)="openEditModal()">Edit</ion-button>
+     <ion-button expand="block" color="danger" (click)="onDeleteProduct()">Delete</ion-button>
   </div>
 </ion-content>
